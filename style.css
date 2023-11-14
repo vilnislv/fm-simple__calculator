@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+/* ||Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ||Utility classes */
+.visually-hidden {
+  display:none
+}
+
+/* General styles */
+body{
+  font: 32px 'League Spartan', sans-serif;
+  margin:0;
+  color: var(--clr-body-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-body-bg);
+}
+.calculator {
+  width: calc(100vw - 2rem);
+  margin-inline: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.1rem;
+}
+
+/* ||switch themes */
+.switch-themes {
+  display: flex;
+  gap: 1rem; 
+  margin: .5rem 0;
+} 
+
+/* ||color picker */
+.color-picker > fieldset {
+  border: 0;
+  display: flex;
+  width: fit-content;
+  padding: .2rem .2rem .53rem;
+  border-radius: 1rem;
+  background: var(--clr-calc-buttons-bg);
+}
+
+.color-picker input[type="radio"] {
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color-picker input[type="radio"]:checked {
+  background-color: var(--radio-color);
+}
+
+.color-picker input[type="radio"]#blue {
+  --radio-color: var(--btn-equal-bg);
+}
+
+.color-picker input[type="radio"]#light {
+  --radio-color: var(--btn-equal-bg);
+}
+.color-picker input[type="radio"]#violet {
+  --radio-color: var(--btn-equal-bg);
+}
+
+.blue,
+:root:has(#blue:checked) {
+  --clr-body-bg: hsl(222, 26%, 31%);
+  --clr-body-font: hsl(0, 0%, 100%);
+  --clr-display-bg: hsl(224, 36%, 15%);
+  --clr-calc-buttons-bg: hsl(223, 31%, 20%);
+  --btn-calc-bg: hsl(30, 25%, 89%);
+  --btn-calc-bg-hover: hsl(34, 30%, 95%);
+  --btn-calc-color: hsl(221, 14%, 31%);
+  --btn-white-text: hsl(0, 0%, 100%);
+  --btn-equal-text: hsl(0, 0%, 100%);
+  --btn-calc-shadow: drop-shadow(4px 4px 2px hsl(28, 16%, 65%))
+  drop-shadow(2px 2px 4px hsl(28, 16%, 65%));
+  --btn-del-reset-shadow: drop-shadow(4px 4px 2px hsl(224, 28%, 35%))
+  drop-shadow(2px 2px 4px hsl(224, 28%, 35%));
+  --btn-equal-shadow: drop-shadow(4px 4px 2px hsl(6, 70%, 34%))
+  drop-shadow(2px 2px 4px hsl(6, 70%, 34%));
+  --btn-del-reset-bg: hsl(225, 21%, 49%);
+  --btn-del-reset-bg-hover: hsl(226, 22%, 57%);
+  --btn-equal-bg: hsl(6, 63%, 50%);
+  --btn-equal-bg-hover: hsl(6, 63%, 55%);
+} 
+
+.light,
+:root:has(#light:checked) {
+  --clr-body-bg: hsl(0, 0%, 90%);
+  --clr-body-font: hsl(60, 10%, 19%);
+  --clr-display-bg: hsl(0, 0%, 93%);
+  --clr-calc-buttons-bg: hsl(0, 5%, 81%);
+  --btn-calc-bg: hsl(45, 7%, 89%);
+  --btn-calc-bg-hover: hsl(60, 11%, 96%);
+  --btn-calc-color: hsl(60, 10%, 19%);
+  --btn-white-text: hsl(0, 0%, 100%);
+  --btn-equal-text: hsl(0, 0%, 100%);
+  --btn-calc-shadow: drop-shadow(4px 4px 2px hsl(35, 11%, 61%))
+  drop-shadow(2px 2px 2px hsl(35, 11%, 61%));
+  --btn-del-reset-shadow: drop-shadow(4px 4px 2px hsl(185, 58%, 25%))
+  drop-shadow(2px 2px 2px hsl(185, 58%, 25%));
+  --btn-equal-shadow: drop-shadow(4px 4px 2px hsl(25, 99%, 27%))
+  drop-shadow(2px 2px 4px hsl(25, 99%, 27%));
+  --btn-del-reset-bg:  hsl(185, 42%, 37%); 
+  --btn-del-reset-bg-hover: hsl(185, 40%, 44%); 
+  --btn-equal-bg: hsl(25, 98%, 40%);
+  --btn-equal-bg-hover: hsl(25, 91%, 45%);
+}
+
+.violet,
+:root:has(#violet:checked) {
+  --clr-body-bg: hsl(268, 75%, 9%);
+  --clr-body-font: hsl(52, 100%, 62%);
+  --clr-display-bg: hsl(268, 71%, 12%);
+  --clr-calc-buttons-bg: hsl(268, 71%, 12%);
+  --btn-calc-color: hsl(52, 100%, 62%);
+  --btn-calc-bg: hsl(268, 47%, 21%);
+  --btn-calc-bg-hover: hsl(268, 44%, 31%);
+  --btn-white-text: hsl(0, 0%, 100%);
+  --btn-equal-text: hsl(198, 20%, 13%);
+  --btn-calc-shadow: drop-shadow(4px 4px 2px hsl(290, 70%, 36%))
+  drop-shadow(2px 2px 2px hsl(290, 70%, 36%));
+  --btn-del-reset-shadow: drop-shadow(4px 4px 2px hsl(285, 91%, 52%))
+  drop-shadow(2px 2px 2px hsl(285, 91%, 52%));
+  --btn-equal-shadow: drop-shadow(4px 4px 2px hsl(177, 92%, 70%))
+  drop-shadow(2px 2px 4px hsl(177, 92%, 70%));
+  --btn-del-reset-bg: hsl(281, 89%, 26%);
+  --btn-del-reset-bg-hover: hsl(281, 82%, 30%);
+  --btn-equal-bg: hsl(176, 100%, 44%);
+  --btn-equal-bg-hover: hsl(176, 91%, 49%);
+}
+
+h5 {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.04375rem;
+  margin-top: 3rem;
+}
+
+#cip__theme {
+  font-size: .8rem;
+  display: flex;
+  margin-left: 1rem;
+  margin-bottom: .1rem;
+  gap: 1.3rem;
+}
+
+/* ||Display */
+#inputBox {
+  width: 100%;
+  border: none;
+  border-radius: 0.625rem;
+  background: var(--clr-display-bg);
+  text-align: right;
+  color: var(--clr-body-font);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+input::placeholder {
+  color:var(--clr-body-font);
+  font-size: 2.5;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.17188rem;
+  opacity: 0.9;
+}
+
+.btn-wrapper {
+  border-radius: 0.625rem;
+  background: var(--clr-calc-buttons-bg);
+  margin-top: 1.4rem;
+  padding: 5%;
+  
+}
+.btn-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  width: 19%;
+  font-size: 1.7rem; 
+  border: none;
+  border-radius: .4rem;
+  color: var(--btn-calc-color);
+  background: var(--btn-calc-bg);
+  padding: .5rem;
+  filter: var(--btn-calc-shadow);
+  margin: 2%;
+  cursor: pointer;
+}
+button:is(:hover, :focus) {
+  background: var(--btn-calc-bg-hover);
+}
+
+.deleteBtn,
+.resetBtn {
+  background-color: var(--btn-del-reset-bg);
+  color: var(--btn-white-text);
+  filter: var(--btn-del-reset-shadow);
+  font-size: 1.5rem;
+  
+}
+.deleteBtn:is(:hover, :focus),
+.resetBtn:is(:hover, :focus) {
+  background-color: var(--btn-del-reset-bg-hover);
+  
+  
+}
+
+.resetBtn,
+.equalBtn {
+  width: 44%;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+
+.equalBtn {
+  background-color: var(--btn-equal-bg);
+  color: var(--btn-equal-text);
+  filter: var(--btn-equal-shadow);
+  font-size: 1.7rem;
+}
+.equalBtn:is(:hover, :focus) {
+  background-color: var(--btn-equal-bg-hover);
+}
+
+footer {
+  margin-top: 2%;
+}
+
+.attribution {
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 768px){
+  .calculator{
+    width: 50%;
+  }
+  .resetBtn,
+  .equalBtn {
+    width: 45.2%;
+  }
+  button {
+    width: 20%;
+  }
+} 
+
+@media (min-width: 1024px){
+  .calculator{
+    width: 40%;
+  }
+  .resetBtn,
+  .equalBtn {
+    width: 45.2%;
+  }
+  button {
+    width: 20%;
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+    
+  }
+} 
+
+@media (min-width: 1200px){
+  .calculator{
+    width: min(100%, 30vw);
+  }
+  .resetBtn,
+  .equalBtn {
+    width: 45.2%;
+  }
+  button {
+    width: 20%;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    
+  }
+  #inputBox {
+    padding: 2rem 3rem;
+  }
+} 
+

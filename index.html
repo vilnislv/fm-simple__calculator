@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="calculator">
+      <header>
+        <h3>calc</h3>
+        <div class="switch-themes">
+          <h5>THEME</h5>
+          <div class="col">
+            <div id="cip__theme">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+            </div>
+            <form class="color-picker" action="">
+              <fieldset>
+                <legend class="visually-hidden">Pick a color scheme</legend>
+                <label for="blue" class="visually-hidden">Blue</label>
+                <input type="radio" name="theme" id="blue" checked>
+                <label for="light" class="visually-hidden">Light</label>
+                <input type="radio" name="theme" id="light">
+                <label for="violet" class="visually-hidden">Violet</label>
+                <input type="radio" name="theme" id="violet">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </header>
+      
+      <input type="text" placeholder="0" id="inputBox">
+      <div class="btn-wrapper">
+        <div class="btn-group">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button class="deleteBtn">DEL</button>
+        </div>
+        <div class="btn-group">
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>+</button>
+        </div>
+        <div class="btn-group">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>-</button>
+        </div>
+        <div class="btn-group">
+          <button>.</button>
+          <button>0</button>
+          <button>/</button>
+          <button>*</button>
+        </div>
+        <div class="btn-group">
+          <button class="resetBtn">RESET</button>
+          <button class="equalBtn">=</button>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="http://www.vilnislv.com">Vilnis</a>.
+        </div>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
